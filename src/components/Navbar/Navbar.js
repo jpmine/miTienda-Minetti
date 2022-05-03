@@ -1,3 +1,5 @@
+import CartWidget from '../CartWidget/CartWidget';
+
 export default function Menunavbar() {
     return (
         <header className="header">
@@ -6,7 +8,8 @@ export default function Menunavbar() {
                     <div><a href="#">GUITARRAS ELECTRICAS</a></div>
                     <div><a href="#">ACUSTICAS</a></div>
                     <div><a href="#">CRIOLLAS</a></div>
-                    <div><a href="#">AMPLIFICADORES</a></div>                    
+                    <div><a href="#">AMPLIFICADORES</a></div>
+                    <CartWidget count={4}/>                  
                 </div>        
         </header>
     );
