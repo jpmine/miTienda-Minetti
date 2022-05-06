@@ -3,15 +3,7 @@
 
 br { clear:left }
 
-header{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
 .menu_simple {
-    display: flex;
-    width: 100%;
     background-color: #F8B400;
     font-family: 'Staatliches', cursive;
     font-size: 24px;
@@ -22,7 +14,6 @@ header{
 .menu_simple div{
     width: 100%;
     padding: 4px;
-    margin-top: 16px;
 }
 
 .menu_simple div a {
@@ -32,27 +23,14 @@ header{
 }
  
 .menu_simple div a:visited {
-    color: white;
+    color: rgb(0, 0, 0);
 }
  
 .menu_simple div a:hover, .menu_simple ul li .current {
-    color: white;
+    color: rgb(0, 0, 0);
     background-color: #125B50;
 }
 
-.navbar-logo{
-    display: flex;
-    flex-wrap: wrap;
-    vertical-align: center;
-    width: 40%;
-  }
-
-  .navbar-logo img{
+.cart-logo img{
     width: 30%;
-    overflow: hidden;
-    margin-top: -6px;
-  }
-
-  .cart-logo img{
-    width: 20%;
   }

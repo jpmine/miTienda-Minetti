@@ -1,7 +1,9 @@
+import Item from "../Item/Item";
+
 export default function ItemListContainer() {
     return (
             <div>
-                <p>Item List Container</p>
+                <Item />
             </div>
     );
   }
