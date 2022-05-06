@@ -34,3 +34,7 @@ br { clear:left }
 .cart-logo img{
     width: 30%;
   }
+
+.card-imgs{
+    max-width: 100%;
+}
