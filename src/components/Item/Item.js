@@ -11,9 +11,8 @@ export default function Item ({product}){
         }
     }
 
-    const stockTelecaster = 10;
     const handleAdd = ()=>{
-        if(count < stockTelecaster){
+        if(count < product.stock){
             setCount(count + 1)
             setText("Agregar")
         }

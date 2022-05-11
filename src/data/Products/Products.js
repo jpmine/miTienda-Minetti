@@ -4,7 +4,7 @@ export const products = [
       title: "Fender Telecaster",
       stock: 10,
       price: 255000,
-      image: "img/fender-telecaster.png",
+      image: "img/fender-telecaster.jpg",
       description: "Se caracteriza por la simplicidad en su diseño y por el sonido que se obtiene de sus dos pastillas de bobinado simple o single coil."
     },
     {

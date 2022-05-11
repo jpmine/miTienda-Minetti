@@ -1,9 +1,9 @@
+import React from 'react'
 import Item from "../Item/Item";
-import { products } from "../../data/Products/Products";
 
-export default function ItemList() {
+export default function ItemList(products) {
     return (
-            <div>
+            <div className='d-flex justify-content-center'>
                 {products.map((product, index) => (
                 <Item product={product} key={product.id}/>
                 )
