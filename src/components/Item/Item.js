@@ -1,42 +1,21 @@
-import React from "react";
-import { Card, Button } from "react-bootstrap";
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-export default function Item ({product}){
-    const [textAdd, setText] = React.useState("Agregar")
-    const [count, setCount] = React.useState(0)
-    const handleRest = ()=>{
-        if(count > 0 ){
-            setCount(count -1)
-            setText("Agregar")
-        }
-    }
+const Item = ({product}) => {
+const navegar = useNavigate();
 
-    const handleAdd = ()=>{
-        if(count < product.stock){
-            setCount(count + 1)
-            setText("Agregar")
-        }
-    }
-
-    return(
-        <div class="row align-items-center">
-            <div class="col">
-                <Card style={{ width: '18rem' }}>
-                <Card.Img class="card-imgs" variant="top" src={product.image} />
-                <Card.Body>
-                    <Card.Title>{product.title}</Card.Title>
-                    <Card.Text>
-                    {product.description}
-                    </Card.Text>
-                    <div class="row justify-content-center">
-                        <input type="button" class="btn btn-success" value="-" onClick={handleRest} />            
-                        <span class="badge bg-warning text-dark fs-5">{count}</span>
-                        <input type="button" class="btn btn-success" value="+" onClick={handleAdd} />            
-                    <input type="button" class="btn btn-outline-warning" value={textAdd} onClick={()=>setText("Agregado")}/>
-                    </div>
-                </Card.Body> 
-                </Card>
-            </div>
+  return (
+    <div className='card' style={{ width: '18rem' }}>
+        <img className="card-imgs" variant="top" src={product.image} alt={product.title}/>
+        <div className='card-title'>{product.title}<hr></hr></div>
+        <div className='card-body'>
+          {product.description}
+        <div className='card-verMas'>
+          <button className='btn btn-success' style={{ width: '98%', margin: '10px'}} onClick={()=>navegar(`/detalle/${product.id}`)}>Ver Más</button></div>
         </div>
-    );
+    </div>
+    
+  )
 }
+
+export default Item

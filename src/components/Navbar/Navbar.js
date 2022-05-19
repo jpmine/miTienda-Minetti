@@ -1,4 +1,5 @@
 import CartWidget from '../CartWidget/CartWidget';
+import {Link} from 'react-router-dom'
 
 export default function Menunavbar() {
     return (
@@ -6,7 +7,7 @@ export default function Menunavbar() {
             <nav class="navbar navbar-expand-lg navbar navbar-dark menu_simple">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="img/logo-labemol.png" alt="" width="60" height="48" />
+                    <Link to='/'><img src="img/logo-labemol.png" alt="" width="60" height="48" /></Link>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -14,16 +15,16 @@ export default function Menunavbar() {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <Link to='/' class="nav-link active">Home</Link>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Eléctricas</a>
+                    <Link to='/categoria/electrica' class="nav-link">Eléctricas</Link>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Acústicas</a>
+                    <Link to="/categoria/acustica" class="nav-link">Acústicas</Link>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Criollas</a>
+                    <Link to='/criollas' class="nav-link">Criollas</Link>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Amplificadores</a>
@@ -40,3 +41,4 @@ export default function Menunavbar() {
         </header>
     );
   }
+  
