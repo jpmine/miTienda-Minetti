@@ -1,27 +1,38 @@
-import React from "react";
+import React from "react"
+import { Button } from "react-bootstrap"
+/* --------------- Declaracion de nuestro functional component -------------- */
+export default function AddButton({count, setCount, stock, onSubmit}) {
 
-export default function ItemCount ({stock}){
-    const [textAdd, setText] = React.useState("Agregar")
-    const [count, setCount] = React.useState(0)
-    const handleRest = ()=>{
-        if(count > 0 ){
-            setCount(count -1)
-            setText("Agregar")
-        }
+  
+  /* -------------------- Funcion para aumentar la cantidad ------------------- */
+  const onAdd = () => {
+    if(count < stock) {
+      setCount(count + 1)
     }
-    const handleAdd = ()=>{
-        if(count < stock){
-            setCount(count + 1)
-            setText("Agregar")
-        }
-    }   
+  }
 
-    return(
-        <div class="row justify-content-center">
-            <input type="Button" className="btn btn-secondary" value="-" onClick={handleRest} />            
-            <span className="badge bg-light text-dark fs-5">{count}</span>
-            <input type="Button" className="btn btn-secondary" value="+" onClick={handleAdd} />            
-            <input type="Button" className="btn btn-outline-primary" value={textAdd} onClick={()=>setText("Agregado")}/>
-        </div>
-    );
+  /* ------------------- Funcion para disminuir la cantidad ------------------- */
+  const onDecrease = () => {
+    if(count > 1) {
+      setCount(count - 1)
+    }
+  }
+  
+  /* ------------------------- Componente presentacion ------------------------ */
+  const StockButton = ({ handleOnClick, text }) => {
+    return <Button className="stock-button" onClick={() => handleOnClick()}>{text}</Button>;
+  };
+  /* ------------------------- Componente presentacion ------------------------ */
+  const AddButton = ({handleOnSubmit}) => {
+    return <Button className="btn add-button" onClick={() => handleOnSubmit()}>Añadir al carrito</Button>;
+  };
+
+  return (
+    <div className="add-button-container">
+      <StockButton text="-" handleOnClick={onDecrease}/>
+      <span className="add-button-count">{count}</span>
+      <StockButton text="+" handleOnClick={onAdd}/>
+      <AddButton handleOnSubmit={onSubmit} />
+    </div>
+  );
 }

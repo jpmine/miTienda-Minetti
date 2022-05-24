@@ -5,11 +5,13 @@ import FetchContainer from "./components/FetchContainer/FetchContainer"
 import Footer from "./components/Footer/Footer"
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
+import {CartProvider} from './Context/CartContext'
 
 function App() {
 
   return (
     <BrowserRouter>
+    <CartProvider>
       <NavBar />
       <Routes>
         <Route path='/' element={<Home/>} />
@@ -19,6 +21,7 @@ function App() {
         <Route path='/fetch' element={<FetchContainer/>} />
       </Routes>
       <Footer />
+      </CartProvider>
     </BrowserRouter>
   );
 }
