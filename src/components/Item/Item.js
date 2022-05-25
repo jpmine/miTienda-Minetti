@@ -1,19 +1,21 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
 
 const Item = ({product}) => {
 const navegar = useNavigate();
 
   return (
-    <div className='card' style={{ width: '18rem' }}>
-        <img className="card-imgs" variant="top" src={product.image} alt={product.title}/>
-        <div className='card-title'>{product.title}<hr></hr></div>
-        <div className='card-body'>
-          {product.description}
-        <div className='card-verMas'>
-          <button className='btn btn-success' style={{ width: '98%', margin: '10px'}} onClick={()=>navegar(`/detalle/${product.id}`)}>Ver Más</button></div>
-        </div>
-    </div>
+    <Card style={{ width: '18rem' }}>
+    <Card.Img variant="top" src={product.image} alt={product.title} />
+    <Card.Body>
+      <Card.Title>{product.title}</Card.Title>
+      <Card.Text>
+      {product.description}
+      </Card.Text>
+      <Button variant="warning"style={{ width: '98%', margin: '10px'}} onClick={()=>navegar(`/detalle/${product.id}`)}>Ver Más</Button>
+    </Card.Body>
+    </Card>
     
   )
 }
