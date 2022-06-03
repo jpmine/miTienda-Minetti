@@ -31,7 +31,7 @@ export default function Menunavbar() {
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Quiero encontrar..." aria-label="Search" />
+                    <input class="form-control me-2" type="search" aria-label="Search" />
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                     <CartWidget className="cart-logo"/>
                 </form>

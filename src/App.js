@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer"
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import {CartProvider} from './Context/CartContext'
-import Cart from "./pages/Cart";
+import Cart from "./components/Cart/Cart";
 
 function App() {
 

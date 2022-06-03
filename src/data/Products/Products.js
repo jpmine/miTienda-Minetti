@@ -13,7 +13,6 @@ export const products = [
       mast: "Arce",
       diapason: "Arce o palo rosa",
       mics: "1, 2 o 3 single coils",
-      discount: 15,
       featured1: "Simplicidad en su diseño",
       featured2: "Timbre agudo y pleno en armónicos",
       featured3: "Su sonido característico viene dado en gran parte por su diseño, el timbre de la madera y las selletas del puente"
@@ -52,7 +51,7 @@ export const products = [
       mics: "Humbucker Gibson 490R y Gibson 490T",
       featured1: "Puente Tune-O-Matic con aluminio Stopbar",
       featured2: "Mástil de arce encolado con perfil cónico fino y diapasón de palisandro",
-      featured3: "Ofrece un cuerpo de caoba con una tapa de arce para un sonido rico,"
+      featured3: "Ofrece un cuerpo de caoba con una tapa de arce para un sonido rico."
     },
     {
       id: '4', 
@@ -74,7 +73,7 @@ export const products = [
     },
     {
     id: '5', 
-    title: "Fender FA-345CE Auditorium Natural ",
+    title: "Fender FA-345CE Auditorium Natural",
     stock: 15,
     price: 140000,
     discount: 8,
@@ -140,7 +139,7 @@ export const products = [
     mast: "Caoba",
     diapason: "Palo de rosa",
     mics: "V50NT Dreadnought",
-    featured1: "Cuerpo de ágata laminado ",
+    featured1: "Cuerpo de ágata laminado",
     featured2: "Incluye: Afinador de clip, correa de guitarra o púas",
     featured3: "Características sobresalientes en términos de sonido y facilidad de ejecución con la calidad habitual de Ibanez."
   },

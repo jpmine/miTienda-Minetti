@@ -2,6 +2,7 @@ import {promesa} from "../../data/Products/Products";
 import ItemList from "../ItemList/ItemList"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 export default function ItemListContainer() {
     const [loading, setLoading] = useState(false)
@@ -26,7 +27,7 @@ export default function ItemListContainer() {
     
     return (
             <div>
-                {loading ? <p>Loading...</p> : <ItemList listaProductos={listaProductos}/>}
+                {loading ? <div className="spinnerLoad d-flex justify-content-center"> <Spinner animation="border" variant="warning" />Cargando</div> : <ItemList listaProductos={listaProductos}/>}
             </div>
         );
   }
