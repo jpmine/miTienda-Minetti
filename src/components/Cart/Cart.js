@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { ListGroup, Badge, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
-    const { cart } = useContext(CartContext)
-
+    const { cart, deleteAll, removeFromCart } = useContext(CartContext)
+    const volver = useNavigate()
 
     const getTotalPrice = (items) => items
     .map((item) => item.price*item.quantity)
@@ -32,11 +33,35 @@ export default function Cart() {
         }
     )
 
-    return (
+    if (total !== 0) {
+        return (
+            <>
             <div className="col-lg-12 col-md-12 col-sm-12">
             {listItems}
+            <button className='btn btn-warning' onClick={()=> removeFromCart()}>Eliminar producto</button>
             <Card body className="display-4">Total: {total}</Card>
+            <div className="d-grid gap-2">
+                <button className='btn btn-warning' onClick={()=> deleteAll()}>Vaciar carrito</button>
+            </div> 
             </div>
-        
-    );
-  }
+            <br />
+            <div className="d-grid gap-2">       
+            <button className='btn btn-warning' onClick={() =>volver('/productos')}>Volver a Productos</button>
+            </div>
+            <br />
+            </>
+        )
+    }else {
+        return (
+        <>
+        <div className="col-lg-12 col-md-12 col-sm-12">
+            <Card body className="display-4 text-center">No hay productos en el carrito</Card>
+        </div> 
+        <div className="d-grid gap-2"> 
+            <button className='btn btn-warning' onClick={() =>volver('/productos')}>Volver a Productos</button>
+        </div>
+        <br />
+        </>
+        )        
+    }
+}

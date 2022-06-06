@@ -1,5 +1,6 @@
 import React from "react";
 import { CartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
 
 
 export default function CartWidget() {
@@ -11,13 +12,16 @@ export default function CartWidget() {
     const cantidad = getTotalQuantity(cart);  
 
     return (
-            <div>{(cantidad == 0) ? <div style={{display: "none"}}></div> :
+            <div>{(cantidad === 0) ? <div style={{display: "none"}}></div> :
+            <Link to="/cart">
                 <div className='cart-logo'>
                     <img src="/img/carticon.png" alt="Carrito" />
                     <span className="cart-badge">
                         {cantidad}
                     </span>
-                </div>}
+                </div>
+                </Link>
+            }
             </div>
     );
   }
