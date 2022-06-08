@@ -1,6 +1,7 @@
 import React from "react";
 import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 
 export default function CartWidget() {
@@ -13,14 +14,15 @@ export default function CartWidget() {
 
     return (
             <div>{(cantidad === 0) ? <div style={{display: "none"}}></div> :
-            <Link to="/cart">
+            
                 <div className='cart-logo'>
-                    <img src="/img/carticon.png" alt="Carrito" />
+                    <Link to="/cart">
+                        <AiOutlineShoppingCart />  
+                    </Link>
                     <span className="cart-badge">
                         {cantidad}
                     </span>
-                </div>
-                </Link>
+                </div>                
             }
             </div>
     );

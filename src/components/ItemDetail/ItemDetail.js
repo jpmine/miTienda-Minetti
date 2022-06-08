@@ -45,6 +45,8 @@ export default function ItemDetail({productDetail}) {
                         />
                     </div>
                     )}
+                    <br />
+                    <br />
                     <button className='btn btn-dark' onClick={() =>volver('/productos')}>Volver a Productos</button>
                     <h3 className="box-title mt-5">Destacados</h3>
                     <ul className="list-unstyled">

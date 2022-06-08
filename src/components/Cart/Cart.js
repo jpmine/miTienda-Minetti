@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { ListGroup, Badge, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Button } from "bootstrap";
 
 export default function Cart() {
     const { cart, deleteAll, removeFromCart } = useContext(CartContext)
@@ -22,9 +23,10 @@ export default function Cart() {
                     <div className="fw-bold">{element.title}</div>
                     Precio {element.price}<br />
                     <h6>Subtotal: {subtotal}</h6>
+                    <button className='btn btn-warning' onClick={()=> removeFromCart(element.id)}>Quitar</button>
                     </div>
                     <Badge bg="primary" pill>
-                    Cantidad: {element.quantity}
+                    Cantidad: {element.quantity}                    
                     </Badge>
                 </ListGroup.Item> 
                 </ListGroup>  
@@ -38,10 +40,9 @@ export default function Cart() {
             <>
             <div className="col-lg-12 col-md-12 col-sm-12">
             {listItems}
-            <button className='btn btn-warning' onClick={()=> removeFromCart()}>Eliminar producto</button>
             <Card body className="display-4">Total: {total}</Card>
             <div className="d-grid gap-2">
-                <button className='btn btn-warning' onClick={()=> deleteAll()}>Vaciar carrito</button>
+                <button className='btn btn-warning' onClick={deleteAll}>Vaciar carrito</button>
             </div> 
             </div>
             <br />
