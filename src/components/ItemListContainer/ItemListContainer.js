@@ -1,29 +1,41 @@
-import {promesa} from "../../data/Products/Products";
+// import {promesa} from "../../data/Products/Products";
 import ItemList from "../ItemList/ItemList"
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
+import { getFirestore, getDocs , collection, query, where } from "firebase/firestore"
 
 export default function ItemListContainer() {
     const [loading, setLoading] = useState(false)
     const [listaProductos, setListaProductos]= useState([])
     const {tipocategoria} = useParams()
 
-    useEffect(()=>{
+    React.useEffect(() => {
         setLoading(true)
-        promesa
-        .then((res) => {
-            if(!tipocategoria){
-                setListaProductos(res)
+        const db = getFirestore()
+        if (tipocategoria) {
+          const q = query(
+            collection(db, "productos"),
+            where("category", "==", tipocategoria)
+          );
+          getDocs(q).then((snapshots) => {
+            if (snapshots.size === 0) {
+              console.log("No hay productos");
             }
-            else{
-                setListaProductos(res.filter((product)=>product.category === tipocategoria))
+            setListaProductos(snapshots.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+            setLoading(false)
+          });
+        } else {
+          const productsRef = collection(db, "productos");
+          getDocs(productsRef).then((snapshots) => {
+            if (snapshots.size === 0) {
+              console.log("No hay productos");
             }
+            setListaProductos(snapshots.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+            setLoading(false)
+          });
         }
-        )
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(false))
-    }, [tipocategoria])
+      },[tipocategoria])
     
     return (
             <div>
