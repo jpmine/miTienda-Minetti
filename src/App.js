@@ -7,6 +7,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import {CartProvider} from './Context/CartContext'
 import Cart from "./components/Cart/Cart";
+import Buyform from "./components/Buyform/Buyform"
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/detalle/:productId' element={<ItemDetailContainer />} />
         <Route path='/fetch' element={<FetchContainer/>} />
         <Route path='/Cart' element={<Cart/>} />
+        <Route path='/Finalizar' element={<Buyform />} />
       </Routes>
       <Footer />
       </CartProvider>

@@ -207,3 +207,22 @@ display: block;
 .spinnerLoad{
     margin: 100px;
 }
+
+.cartImg{
+    align-items: center;
+    padding: 12px;
+    width: 8rem;
+    background-color: rgb(220, 220, 220);
+    border: #F8B400 solid 1.5px;
+}
+
+.cartImg img{
+    align-items: center;
+    width: 100%;
+}
+
+.orderForm{
+    padding: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}

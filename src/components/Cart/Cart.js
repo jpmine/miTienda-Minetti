@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { ListGroup, Badge, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { Button } from "bootstrap";
 
 export default function Cart() {
     const { cart, deleteAll, removeFromCart } = useContext(CartContext)
@@ -20,14 +19,22 @@ export default function Cart() {
                 <ListGroup as="ul">
                 <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start">
                     <div className="ms-2 me-auto">
-                    <div className="fw-bold">{element.title}</div>
-                    Precio {element.price}<br />
-                    <h6>Subtotal: {subtotal}</h6>
-                    <button className='btn btn-warning' onClick={()=> removeFromCart(element.id)}>Quitar</button>
+                        <div className="fw-bold">{element.title}</div>
+                        Precio {element.price}<br />
+                        <h6>Subtotal: {subtotal}</h6>
+                        <Badge bg="success" pill>
+                            Cantidad: {element.quantity}                    
+                        </Badge>
+                        <br />
+                        <br />
+                        <div>
+                            <button className='btn btn-warning' onClick={()=> removeFromCart(element.id)}>Quitar</button>                            
+                        </div>
                     </div>
-                    <Badge bg="primary" pill>
-                    Cantidad: {element.quantity}                    
-                    </Badge>
+                    
+                    <div className="ms-3 me-auto cartImg align-self-end">
+                        <img src={element.image} alt={element.title} />
+                    </div>
                 </ListGroup.Item> 
                 </ListGroup>  
                 </>       
@@ -50,6 +57,9 @@ export default function Cart() {
             <button className='btn btn-warning' onClick={() =>volver('/productos')}>Volver a Productos</button>
             </div>
             <br />
+            <div className="d-grid gap-2">       
+            <button className='btn btn-success' onClick={() =>volver('/Finalizar')}>Terminar compra</button>
+            </div>
             </>
         )
     }else {
