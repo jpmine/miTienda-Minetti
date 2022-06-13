@@ -47,7 +47,7 @@ export default function Cart() {
             <>
             <div className="col-lg-12 col-md-12 col-sm-12">
             {listItems}
-            <Card body className="display-4">Total: {total}</Card>
+            <Card body className="display-4">Total: ${total}</Card>
             <div className="d-grid gap-2">
                 <button className='btn btn-warning' onClick={deleteAll}>Vaciar carrito</button>
             </div> 

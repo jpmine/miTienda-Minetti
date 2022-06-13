@@ -1,6 +1,6 @@
 // import {promesa} from "../../data/Products/Products";
 import ItemList from "../ItemList/ItemList"
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
 import { getFirestore, getDocs , collection, query, where } from "firebase/firestore"

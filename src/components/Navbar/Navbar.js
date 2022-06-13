@@ -7,7 +7,7 @@ export default function Menunavbar() {
         <header className="header">
             <nav class="navbar navbar-expand-lg navbar navbar-dark menu_simple">
             <div class="container-fluid">
-                <a class="navbar-brand" Link to='/' >
+                <a class="navbar-brand" Link to='/' href='Home' >
                     <Link to='/'><img src="img/logo-labemol.png" alt="" width="90" height="74" /></Link>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,9 +26,6 @@ export default function Menunavbar() {
                     </li>
                     <li class="nav-item">
                     <Link to='/criollas' class="nav-link">Criollas</Link>
-                    </li>
-                    <li class="nav-item">
-                    <Link to='/criollas' class="nav-link">Amplificadores</Link>
                     </li>
                 </ul>
                 <Navbar.Collapse className="justify-content-end">

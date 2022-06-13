@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import {Link} from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -7,21 +8,20 @@ export default function Footer() {
             <h3>#LaBemol</h3>
             <p>Especialistas en guitarras</p>
             <ul class="socials">
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><Link to="instagram.com"><i class="fa fa-instagram"></i></Link></li>
+                <li><Link to="twitter.com"><i class="fa fa-twitter"></i></Link></li>
+                <li><Link to="youtube.com"><i class="fa fa-youtube"></i></Link></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>@copyright <a href="#">#LaBemol</a>  </p>
+            <p>@copyright <Link to='/'>#LaBemol</Link> </p>
                     <div class="footer-menu">
                       <ul class="f-menu">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Eléctricas</a></li>
-                        <li><a href="">Acústicas</a></li>
-                        <li><a href="">Criollas</a></li>
-                        <li><a href="">Amplificadores</a></li>
-                        <li><a href="">Contacto</a></li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/categoria/electrica'>Eléctricas</Link></li>
+                        <li><Link to='/categoria/acustica'>Acústicas</Link></li>
+                        <li><Link to='/categoria/criolla'>Criollas</Link></li>
+                        <li>Contacto</li>
                       </ul>
                     </div>
         </div>
