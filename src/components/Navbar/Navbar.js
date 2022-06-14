@@ -25,7 +25,7 @@ export default function Menunavbar() {
                     <Link to="/categoria/acustica" class="nav-link">Acústicas</Link>
                     </li>
                     <li class="nav-item">
-                    <Link to='/criollas' class="nav-link">Criollas</Link>
+                    <Link to='/categoria/criolla' class="nav-link">Criollas</Link>
                     </li>
                 </ul>
                 <Navbar.Collapse className="justify-content-end">

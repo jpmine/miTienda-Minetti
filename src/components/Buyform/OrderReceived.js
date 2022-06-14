@@ -1,16 +1,24 @@
-import order from "./order.css"
+import "./order.css"
 import React from 'react'
 import { useContext } from "react"
 import { CartContext } from "../../Context/CartContext"
+import { Col, Container, Row } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 
 export const OrderReceived = ({orderId}, {data}) => {
-    const { cart } = useContext(CartContext)
+    const { cart, deleteAll } = useContext(CartContext)
+    const navegar = useNavigate();
 
     const getTotal = (items) => items
     .map((item) => item.price*item.quantity)
     .reduce((acc, value) => acc + value, 0)  
     
     const total = getTotal(cart); 
+
+    const Continuar = () =>{
+        deleteAll()
+        navegar(`/`)
+    }
 
     return (
     
@@ -37,8 +45,7 @@ export const OrderReceived = ({orderId}, {data}) => {
                 </div>
                 <div class="total-order">
                     <div class="row">
-                        <div class="col-9"></div>
-                        <div class="col-3"><big>Total de tu compra: ${total}</big></div>
+                        <div class="col-9"><big>Total de tu compra: ${total}</big></div>
                     </div>
                 </div>
                 <div class="progress-track-order">
@@ -51,6 +58,20 @@ export const OrderReceived = ({orderId}, {data}) => {
                         <li class="step0 text-right" id="step3">En camino</li>
                         <li class="step0 text-right" id="step4">Recibido</li>
                     </ul>
+                </div>
+
+                <div class="total-order">
+                    <div class="row">
+                    <Container>
+                    <Row>
+                        <Col>
+                            <div className="d-grid gap-2">
+                            <button className='btn btn-warning card-shadow' onClick={Continuar}>Continuar</button>
+                            </div> 
+                        </Col>
+                    </Row>
+                    </Container>
+                    </div>
                 </div>
 
                 <div class="footer-order">

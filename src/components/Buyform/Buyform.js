@@ -30,7 +30,7 @@ export default function OrderForm() {
         await addDoc(ordersCollection, order).then(({id}) => {
             setOrderId(id)
             updateProducts()
-        })
+        })       
     }
 
     const updateProducts = async () => {

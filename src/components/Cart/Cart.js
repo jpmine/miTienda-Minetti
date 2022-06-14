@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
-import { ListGroup, Badge, Card } from "react-bootstrap";
+import { ListGroup, Badge, Card, Row, Col, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { BsFillTrashFill } from "react-icons/bs";
+
 
 export default function Cart() {
     const { cart, deleteAll, removeFromCart } = useContext(CartContext)
@@ -22,17 +24,17 @@ export default function Cart() {
                         <div className="fw-bold">{element.title}</div>
                         Precio {element.price}<br />
                         <h6>Subtotal: {subtotal}</h6>
-                        <Badge bg="success" pill>
+                        <Badge bg="success" pill className="card-shadow">
                             Cantidad: {element.quantity}                    
                         </Badge>
                         <br />
                         <br />
                         <div>
-                            <button className='btn btn-warning' onClick={()=> removeFromCart(element.id)}>Quitar</button>                            
+                            <button className='btn btn-warning card-shadow' onClick={()=> removeFromCart(element.id)}><BsFillTrashFill /></button>                            
                         </div>
                     </div>
                     
-                    <div className="ms-3 me-auto cartImg align-self-end">
+                    <div className="ms-3 me-auto cartImg card-shadow align-self-end">
                         <img src={element.image} alt={element.title} />
                     </div>
                 </ListGroup.Item> 
@@ -46,20 +48,31 @@ export default function Cart() {
         return (
             <>
             <div className="col-lg-12 col-md-12 col-sm-12">
-            {listItems}
-            <Card body className="display-4">Total: ${total}</Card>
-            <div className="d-grid gap-2">
-                <button className='btn btn-warning' onClick={deleteAll}>Vaciar carrito</button>
-            </div> 
-            </div>
-            <br />
-            <div className="d-grid gap-2">       
-            <button className='btn btn-warning' onClick={() =>volver('/productos')}>Volver a Productos</button>
-            </div>
-            <br />
-            <div className="d-grid gap-2">       
-            <button className='btn btn-success' onClick={() =>volver('/Finalizar')}>Terminar compra</button>
-            </div>
+                {listItems}
+                <Card body className="display-4">Total: ${total}</Card>
+
+                <Container>
+                <Row>
+                    <Col>
+                        <div className="d-grid gap-2">
+                        <button className='btn btn-warning card-shadow' onClick={deleteAll}>Vaciar carrito</button>
+                        </div> 
+                    </Col>
+                    <Col>
+                        <div className="d-grid gap-2">       
+                        <button className='btn btn-success card-shadow' onClick={() =>volver('/Finalizar')}>Terminar compra</button>
+                        </div>
+                    </Col>
+                
+                <Col>
+                    <div className="d-grid gap-2">       
+                    <button className='btn btn-warning card-shadow' onClick={() =>volver('/productos')}>Volver a Productos</button>
+                    </div> 
+                </Col>   
+                </Row>
+                </Container>   
+                </div>  
+                <br />  
             </>
         )
     }else {
