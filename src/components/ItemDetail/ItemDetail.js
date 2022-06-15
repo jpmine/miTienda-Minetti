@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from '../../Context/CartContext';
 import {Link} from 'react-router-dom'
+import { BsFillArrowDownCircleFill } from "react-icons/bs";
 
 //import Item from "../Item/Item"
 //import Products from "./data/Products/Products"
@@ -29,9 +30,15 @@ export default function ItemDetail({productDetail}) {
                     <p>{description}</p>
                     <h2 className="mt-5">
                      Precio: ${price}<br />
+                     </h2>
+                     <h3>
                      <small className="text-success">Descuento: {discount}%</small>
-                    </h2>
-                    <hr></hr>
+                     </h3>
+                     <h5>
+                     <small>Stock disponible: {stock} unidades</small>
+                     </h5>
+                    
+                    <hr />
                     
                     {isInCart(id) ? (
                         <Link to='/Cart'><button className="btn btn-warning">Ir al carrito</button></Link>
@@ -45,9 +52,8 @@ export default function ItemDetail({productDetail}) {
                         />
                     </div>
                     )}
-                    <br />
-                    <br />
                     <button className='btn btn-dark' onClick={() =>volver('/productos')}>Volver a Productos</button>
+                    <h1 className="text-end"><BsFillArrowDownCircleFill /></h1>
                     <h3 className="box-title mt-5">Destacados</h3>
                     <ul className="list-unstyled">
                         <li><i className="fa fa-check text-success"></i>{featured1}</li>

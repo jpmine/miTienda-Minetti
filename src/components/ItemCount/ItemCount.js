@@ -20,7 +20,7 @@ export default function AddButton({count, setCount, stock, onSubmit}) {
   
   /* ------------------------- Componente presentacion ------------------------ */
   const StockButton = ({ handleOnClick, text }) => {
-    return <Button className="btn-success" onClick={() => handleOnClick()}>{text}</Button>;
+    return <Button className="btn-success stock-button" onClick={() => handleOnClick()}>{text}</Button>;
   };
   /* ------------------------- Componente presentacion ------------------------ */
   const AddButton = ({handleOnSubmit}) => {
