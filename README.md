@@ -3,7 +3,7 @@
 
 [VER EN VERCEL](https://tienda-de-guitarras-la-bemol.vercel.app/)
 
-![](Tienda-la-bemol.gif)
+![](https://github.com/jpmine/miTienda-Minetti/blob/4f071d3ca1b44e52d7b78164117cf3e4c4537989/Tienda-la-bemol-1.gif)
 
 Tienda e-commerce especializada en guitarras, desarrollada en ReactJS para el curso de Coderhouse.
 

@@ -24,6 +24,7 @@ export default function OrderForm() {
         const order = {
             buyer: data,
             items: cart,
+            date: new Date()
         }
         const db = getFirestore()
         const ordersCollection = collection(db, "orders")
