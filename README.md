@@ -3,7 +3,7 @@
 
 [VER EN VERCEL](https://tienda-de-guitarras-la-bemol.vercel.app/)
 
-![](Tienda-la-bemol.webm)
+![](Tienda-la-bemol.gif)
 
 Tienda e-commerce especializada en guitarras, desarrollada en ReactJS para el curso de Coderhouse.
 
