@@ -33,8 +33,9 @@ br { clear:left }
 }
 
 .cart-logo img{
-    width: 30%;
     height: 10%;
+    object-fit: contain;
+    align-self: center;
   }
 
 .card-imgs{

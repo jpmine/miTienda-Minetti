@@ -40,18 +40,24 @@ export default function ItemDetail({productDetail}) {
                     
                     <hr />
                     
-                    {isInCart(id) ? (
-                        <Link to='/Cart'><button className="btn btn-warning">Ir al carrito</button></Link>
-                    ) : (
-                    <div>
-                        <ItemCount 
-                            onSubmit={()=> addToCart(productDetail, count)}
-                            count={count}
-                            setCount={setCount}
-                            stock={stock}
-                        />
-                    </div>
-                    )}
+                    {
+                        isInCart(id) ? (
+                            <Link to='/Cart'><button className="btn btn-warning">Ir al carrito</button></Link>
+                        ) : (stock === 0) ? (
+                            <h3 className="mt-3">
+                                Producto agotado.
+                            </h3>
+                        ) : (                            
+                                <div>
+                                <ItemCount 
+                                    onSubmit={()=> addToCart(productDetail, count)}
+                                    count={count}
+                                    setCount={setCount}
+                                    stock={stock}
+                                />
+                            </div>
+                        )
+                    }
                     <button className='btn btn-dark' onClick={() =>volver('/productos')}>Volver a Productos</button>
                     <h1 className="text-end"><BsFillArrowDownCircleFill /></h1>
                     <h3 className="box-title mt-5">Destacados</h3>
